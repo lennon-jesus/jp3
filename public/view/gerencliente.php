@@ -66,7 +66,13 @@ $atual = "Cliente";
                     <td><?=$cliente['CONTATO']?></td>
                     <td><?=$cliente['DOCUMENTO']?></td>
                     <td><?=$cliente['TIPO_DOCUMENTO']?></td>
-                    <td><?=$cliente['OBS']?></td>
+                    <td><?php if(strlen($cliente['OBS']) > 14){
+                      echo substr($cliente['OBS'], 0, 9);
+                      echo '...';
+                      ?>
+                      <a onclick="alert('<?=$cliente['OBS']?>')"><span class="material-symbols-outlined">expand_content</span></button><?php
+                    }else
+                      echo $cliente['OBS'];?></td>
                     <td>
                       <a href="viewcliente.php?id=<?=$cliente['ID_CLIENTE']?>" class="btn btn-secondary btn-sm"><span class="bi-eye-fill"></span>&nbsp;Visualizar</a>
                       <a href="editcliente.php?id=<?=$cliente['ID_CLIENTE']?>" class="btn btn-light btn-sm"><span class="bi-pencil-fill"></span>&nbsp;Editar</a>

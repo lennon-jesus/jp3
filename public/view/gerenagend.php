@@ -63,10 +63,22 @@ $atual = "Agendamento";
                     <td><?=$agend['ID_CLIENTE']?></td>
                     <td><?=date('d/m/Y', strtotime($agend['CHECK_IN']))?></td>
                     <td><?=date('d/m/Y', strtotime($agend['CHECK_OUT']))?></td>
-                    <td><?=$agend['STATUS']?></td>
+                    <td><?php
+                    if($agend['STATUS'])
+                      echo "Aberto";
+                    else
+                      echo "Fechado";
+                    ?></td>
+                    <td>
                     <td><?=$agend['ID_QUARTO']?></td>
                     <td><?=$agend['ID_FUNCIONARIO']?></td>
-                    <td><?=$agend['OBS']?></td>
+                    <td><?php if(strlen($agend['OBS']) > 20){
+                      echo substr($agend['OBS'], 0, 15);
+                      echo '...';
+                      ?>
+                      <a onclick="alert('<?=$agend['OBS']?>')"><span class="material-symbols-outlined">expand_content</span></button><?php
+                    }else
+                      echo $agend['OBS'];?></td>
                     <td>
                       <a href="viewagend.php?id=<?=$agend['ID_AGENDAMENTO']?>" class="btn btn-secondary btn-sm"><span class="bi-eye-fill"></span>&nbsp;Visualizar</a>
                       <a href="editagend.php?id=<?=$agend['ID_AGENDAMENTO']?>" class="btn btn-light btn-sm"><span class="bi-pencil-fill"></span>&nbsp;Editar</a>
