@@ -20,10 +20,10 @@
                     </ul>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Relatórios</a>
+                    <a class="nav-link" href="atendimento.php">Atendimento</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="atendimento.php">Atendimento</a>
+                    <a class="nav-link" href="#">Relatórios</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="logout.php" tabindex="-1" aria-disabled="true">

@@ -111,7 +111,6 @@
 .form-step {
   display: none;
   transform-origin: top;
-  animation: animate 0.5s;
 }
 
 .form-step-active {
