@@ -15,9 +15,6 @@
             <a class="nav-link" href="gerenfunc.php">Funcionário</a>
             </li>
             <li class="nav-item">
-            <a class="nav-link" href="gerenpedido.php">Pedido</a>
-            </li>
-            <li class="nav-item">
             <a class="nav-link" href="gerenproduto.php">Produto</a>
             </li>
             <li class="nav-item">

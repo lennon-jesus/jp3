@@ -14,7 +14,6 @@
                         <li><a class="dropdown-item" href="gerenagend.php">Agendamento</a></li>
                         <li><a class="dropdown-item" href="gerenquarto.php">Quarto</a></li>
                         <li><a class="dropdown-item" href="gerenfunc.php">Funcionário</a></li>
-                        <li><a class="dropdown-item" href="gerenpedido.php">Pedido</a></li>
                         <li><a class="dropdown-item" href="gerenproduto.php">Produto</a></li>
                         <li><a class="dropdown-item" href="gerenpatrimonio.php">Patrimônio</a></li>
                     </ul>
@@ -26,7 +25,7 @@
                     <a class="nav-link" href="#">Relatórios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="logout.php" tabindex="-1" aria-disabled="true">
+                    <a class="nav-link" data-bs-toggle="modal" data-bs-target="#logoutModal" href="#" tabindex="-1" aria-disabled="true">
                         <span class="material-symbols-outlined">logout</span>
                     </a>
                 </li>
@@ -34,3 +33,21 @@
         </div>
     </div>
 </nav>
+<!-- Modal -->
+<div class="modal fade" id="logoutModal" tabindex="-1" aria-labelledby="logoutModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="logoutModalLabel">Já vai?</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Tem certeza que deseja desconectar?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Não</button>
+        <a href="logout.php" class="btn btn-light">Sim</a>
+      </div>
+    </div>
+  </div>
+</div>
