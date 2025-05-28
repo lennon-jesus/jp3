@@ -43,7 +43,6 @@ $atual = "Produto";
               <table class="table table-bordered table-striped">
                 <thead>
                   <tr>
-                    <th>ID</th>
                     <th>Item</th>
                     <th>Valor</th>
                     <th>Ações</th>
@@ -54,15 +53,14 @@ $atual = "Produto";
                     foreach($produtos as $produto) {
                   ?>
                   <tr>
-                    <td><?=$produto['ID_PRODUTO']?></td>
                     <td><?=$produto['NOME']?></td>
                     <td><?=$produto['VALOR']?></td>
                     <td>
-                      <a href="viewproduto.php?id=<?=$produto['ID_PRODUTO']?>" class="btn btn-secondary btn-sm"><span class="bi-eye-fill"></span>&nbsp;Visualizar</a>
-                      <a href="editproduto.php?id=<?=$produto['ID_PRODUTO']?>" class="btn btn-light btn-sm"><span class="bi-pencil-fill"></span>&nbsp;Editar</a>
+                      <a href="viewproduto.php?id=<?=$produto['ID_PRODUTO']?>" class="btn btn-secondary btn-sm"><span class="bi-eye-fill"></span>&nbsp;<span class="material-symbols-outlined" title="Ver">visibility</span></a>
+                      <a href="editproduto.php?id=<?=$produto['ID_PRODUTO']?>" class="btn btn-light btn-sm"><span class="bi-pencil-fill"></span>&nbsp;<span class="material-symbols-outlined" title="Editar">edit</span></a>
                       <form action="acoes.php" method="POST" class="d-inline">
                         <button onclick="return confirm('Tem certeza que deseja excluir?')" type="submit" name="deleteProduto" value="<?=$produto['ID_PRODUTO']?>" class="btn btn-danger btn-sm">
-                          <span class="bi-trash3-fill"></span>&nbsp;Excluir
+                          <span class="bi-trash3-fill"></span>&nbsp;<span class="material-symbols-outlined" title="Deletar">delete</span>
                         </button>
                       </form>
                     </td>

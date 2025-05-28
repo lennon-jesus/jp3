@@ -102,3 +102,26 @@ function updateProgressbar() {
   progress.style.width =
     ((progressActive.length - 1) / (progressSteps.length - 1)) * 100 + "%";
 }
+
+
+function isNumberKey(evt) {
+  var charCode = (evt.which) ? evt.which : evt.keyCode
+  if (charCode > 31 && (charCode < 48 || charCode > 57))
+    return false;
+  return true;
+}
+
+
+
+$('#qntInput').on('change', function() {
+  if($(this).val() != ''){
+    $("#btnNextFicha").show()
+    $("#btnPrevFicha").show()
+  }
+});
+
+$(document).ready(function()
+{
+  $("#btnNextFicha").hide()
+  $("#btnPrevFicha").hide()
+});

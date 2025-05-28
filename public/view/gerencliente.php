@@ -76,13 +76,13 @@ $atual = "Cliente";
                     </td>
                     <td>
                       <a href="viewcliente.php?id=<?= $cliente['ID_CLIENTE'] ?>" class="btn btn-secondary btn-sm"><span
-                          class="bi-eye-fill"></span>&nbsp;Visualizar</a>
+                          class="bi-eye-fill"></span>&nbsp;<span class="material-symbols-outlined" title="Ver">visibility</span></a>
                       <a href="editcliente.php?id=<?= $cliente['ID_CLIENTE'] ?>" class="btn btn-light btn-sm"><span
-                          class="bi-pencil-fill"></span>&nbsp;Editar</a>
+                          class="bi-pencil-fill"></span>&nbsp;<span class="material-symbols-outlined" title="Editar">edit</span></a>
                       <form action="acoes.php" method="POST" class="d-inline">
                         <button onclick="return confirm('Tem certeza que deseja excluir?')" type="submit"
                           name="deleteCliente" value="<?= $cliente['ID_CLIENTE'] ?>" class="btn btn-danger btn-sm">
-                          <span class="bi-trash3-fill"></span>&nbsp;Excluir
+                          <span class="bi-trash3-fill"></span>&nbsp;<span class="material-symbols-outlined" title="Deletar">delete</span>
                         </button>
                       </form>
                     </td>

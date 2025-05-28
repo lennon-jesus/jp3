@@ -43,7 +43,6 @@ $atual = "Funcionário";
               <table class="table table-bordered table-striped">
                 <thead>
                   <tr>
-                    <th>ID</th>
                     <th>Usuário</th>
                     <th>Senha</th>
                     <th>Nível de Acesso</th>
@@ -55,7 +54,7 @@ $atual = "Funcionário";
                     foreach($funcionarios as $func) {
                   ?>
                   <tr>
-                    <td><?=$func['ID_FUNCIONARIO']?></td>
+
                     <td><?=$func['USUARIO']?></td>
                     <td><?=$func['SENHA']?></td>
                     <td><?php
@@ -65,11 +64,11 @@ $atual = "Funcionário";
                       echo "Comum";
                     ?></td>
                     <td>
-                      <a href="viewagend.php?id=<?=$func['ID_FUNCIONARIO']?>" class="btn btn-secondary btn-sm"><span class="bi-eye-fill"></span>&nbsp;Visualizar</a>
-                      <a href="editagend.php?id=<?=$func['ID_FUNCIONARIO']?>" class="btn btn-light btn-sm"><span class="bi-pencil-fill"></span>&nbsp;Editar</a>
+                      <a href="viewagend.php?id=<?=$func['ID_FUNCIONARIO']?>" class="btn btn-secondary btn-sm"><span class="bi-eye-fill"></span>&nbsp;<span class="material-symbols-outlined" title="Ver">visibility</span></a>
+                      <a href="editagend.php?id=<?=$func['ID_FUNCIONARIO']?>" class="btn btn-light btn-sm"><span class="bi-pencil-fill"></span>&nbsp;<span class="material-symbols-outlined" title="Editar">edit</span></a>
                       <form action="acoes.php" method="POST" class="d-inline">
                         <button onclick="return confirm('Tem certeza que deseja excluir?')" type="submit" name="deleteFunc" value="<?=$func['ID_FUNCIONARIO']?>" class="btn btn-danger btn-sm">
-                          <span class="bi-trash3-fill"></span>&nbsp;Excluir
+                          <span class="bi-trash3-fill"></span>&nbsp;<span class="material-symbols-outlined" title="Deletar">delete</span>
                         </button>
                       </form>
                     </td>

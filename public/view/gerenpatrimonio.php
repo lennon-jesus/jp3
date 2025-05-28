@@ -43,7 +43,6 @@ $atual = "Patrimônio";
               <table class="table table-bordered table-striped">
                 <thead>
                   <tr>
-                    <th>ID</th>
                     <th>Nome</th>
                     <th>Valor</th>
                     <th>Status</th>
@@ -56,7 +55,6 @@ $atual = "Patrimônio";
                     foreach($patrimonios as $patrimonio) {
                   ?>
                   <tr>
-                    <td><?=$patrimonio['ID_PATRIMONIO']?></td>
                     <td><?=$patrimonio['NOME']?></td>
                     <td><?=$patrimonio['VALOR']?></td>
                     <td><?php
@@ -69,11 +67,11 @@ $atual = "Patrimônio";
                     ?></td>
                     <td><?=$patrimonio['ID_QUARTO']?></td>
                     <td>
-                      <a href="viewpatrimonio.php?id=<?=$patrimonio['ID_PATRIMONIO']?>" class="btn btn-secondary btn-sm"><span class="bi-eye-fill"></span>&nbsp;Visualizar</a>
-                      <a href="viewpatrimonio.php?id=<?=$patrimonio['ID_PATRIMONIO']?>" class="btn btn-light btn-sm"><span class="bi-pencil-fill"></span>&nbsp;Editar</a>
+                      <a href="viewpatrimonio.php?id=<?=$patrimonio['ID_PATRIMONIO']?>" class="btn btn-secondary btn-sm"><span class="bi-eye-fill"></span>&nbsp;<span class="material-symbols-outlined" title="Ver">visibility</span></a>
+                      <a href="viewpatrimonio.php?id=<?=$patrimonio['ID_PATRIMONIO']?>" class="btn btn-light btn-sm"><span class="bi-pencil-fill"></span>&nbsp;<span class="material-symbols-outlined" title="Editar">edit</span></a>
                       <form action="acoes.php" method="POST" class="d-inline">
                         <button onclick="return confirm('Tem certeza que deseja excluir?')" type="submit" name="deletePatrimonio" value="<?=$patrimonio['ID_PATRIMONIO']?>" class="btn btn-danger btn-sm">
-                          <span class="bi-trash3-fill"></span>&nbsp;Excluir
+                          <span class="bi-trash3-fill"></span>&nbsp;<span class="material-symbols-outlined" title="Deletar">delete</span>
                         </button>
                       </form>
                     </td>

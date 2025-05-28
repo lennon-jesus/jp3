@@ -44,7 +44,6 @@ $atual = "Agendamento";
             <table class="table table-bordered table-striped">
               <thead>
                 <tr>
-                  <th>Cliente</th>
                   <th>Data de Check-in</th>
                   <th>Data de Check-out</th>
                   <th>Status</th>
@@ -59,7 +58,6 @@ $atual = "Agendamento";
                 foreach ($agendamentos as $agend) {
                   ?>
                   <tr>
-                    <td><?= $agend['ID_CLIENTE'] ?></td>
                     <td><?= date('d/m/Y', strtotime($agend['CHECK_IN'])) ?></td>
                     <td><?= date('d/m/Y', strtotime($agend['CHECK_OUT'])) ?></td>
                     <td><?php
@@ -81,13 +79,13 @@ $atual = "Agendamento";
                     </td>
                     <td>
                       <a href="viewagend.php?id=<?= $agend['ID_AGENDAMENTO'] ?>" class="btn btn-secondary btn-sm"><span
-                          class="bi-eye-fill"></span>&nbsp;Visualizar</a>
+                          class="bi-eye-fill"></span>&nbsp;<span class="material-symbols-outlined" title="Ver">visibility</span></a>
                       <a href="editagend.php?id=<?= $agend['ID_AGENDAMENTO'] ?>" class="btn btn-light btn-sm"><span
-                          class="bi-pencil-fill"></span>&nbsp;Editar</a>
+                          class="bi-pencil-fill"></span>&nbsp;<span class="material-symbols-outlined" title="Editar">edit</span></a>
                       <form action="acoes.php" method="POST" class="d-inline">
                         <button onclick="return confirm('Tem certeza que deseja excluir?')" type="submit"
                           name="deleteAgend" value="<?= $agend['ID_AGENDAMENTO'] ?>" class="btn btn-danger btn-sm">
-                          <span class="bi-trash3-fill"></span>&nbsp;Excluir
+                          <span class="bi-trash3-fill"></span>&nbsp;<span class="material-symbols-outlined" title="Deletar">delete</span>
                         </button>
                       </form>
                     </td>
