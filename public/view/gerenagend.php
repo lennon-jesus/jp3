@@ -105,29 +105,9 @@ $atual = "Agendamento";
 
   <!-- Modal de observações. Cria um novo para cada agendamento que a observação tenha mais de 20 caracteres -->
   <?php
-  foreach ($agendamentos as $agend) {
-    if (strlen($agend['OBS']) > 20) {
-      ?>
-      <div class="modal fade" id="modal<?= $j ?>" aria-labelledby="<?= $j ?>ModalLabel" aria-hidden="true">
-        <div class="modal-dialog">
-          <div class="modal-content">
-            <div class="modal-header">
-              <h5 class="modal-title" id="<?= $j ?>ModalLabel">Observações do Agendamento</h5>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-            </div>
-            <div class="modal-body">
-              <?= $agend['OBS'] ?>
-            </div>
-            <div class="modal-footer">
-              <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">OK</button>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <?php
-    }
-    $j++;
+  $length = 20;
+  foreach ($agendamentos as $table) {
+      include('modalobs.php');
   }
   ?>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
