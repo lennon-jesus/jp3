@@ -55,6 +55,10 @@ footer {
   background-blend-mode: lighten;
 }
 
+.fade-stack {
+  z-index: 1039 !important;
+}
+
 .navbar{
     font-size:1.1em;
     border-bottom: 2px solid black;

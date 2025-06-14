@@ -6,4 +6,9 @@ $agendExecute = $pdo->prepare($agendSQL);
 $agendExecute->execute();
 $agendamentos = $agendExecute->fetchAll(PDO::FETCH_ASSOC);
 
+$roomsSQL = "SELECT * FROM QUARTO WHERE deletedat IS NULL";
+$roomsExecute = $pdo->prepare($roomsSQL);
+$roomsExecute->execute();
+$rooms = $roomsExecute->fetchAll(PDO::FETCH_ASSOC);
+
 ?>

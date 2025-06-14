@@ -31,13 +31,17 @@ $atual = "Agendamento";
 <body>
   <?php include('navbar.php'); ?>
   <?php include('navgerenc.php'); ?>
+  <?php include('modal/modalagend.php') ?>
+  <?php include('modal/modalcancel.php') ?>
+  <?php include('modal/modalapagar.php') ?>
   <div class="container mt-4">
     <div class="row">
       <div class="col-md-12">
         <div class="card">
           <div class="card-header">
             <h4> Lista de Agendamentos
-              <a href="createagend.php" class="btn btn-primary float-end">Adicionar agendamento</a>
+              <a data-bs-toggle="modal" data-bs-target="#addModal" href="#" class="btn btn-primary float-end">Adicionar
+                agendamento</a>
             </h4>
           </div>
           <div class="card-body">
@@ -73,20 +77,21 @@ $atual = "Agendamento";
                       echo '...';
                       ?>
                         <a data-bs-toggle="modal" data-bs-target="#modal<?= $i ?>" href="#"><span
-                        class="material-symbols-outlined">expand_content</span></a><?php
+                            class="material-symbols-outlined">expand_content</span></a><?php
                     } else
                       echo $agend['OBS']; ?>
                     </td>
                     <td>
-                      <a href="viewagend.php?id=<?= $agend['ID_AGENDAMENTO'] ?>" class="btn btn-secondary btn-sm"><span
-                          class="bi-eye-fill"></span>&nbsp;<span class="material-symbols-outlined" title="Ver">visibility</span></a>
-                      <a href="editagend.php?id=<?= $agend['ID_AGENDAMENTO'] ?>" class="btn btn-light btn-sm"><span
-                          class="bi-pencil-fill"></span>&nbsp;<span class="material-symbols-outlined" title="Editar">edit</span></a>
+                      <a href="#" class="btn btn-secondary btn-sm"><span class="bi-eye-fill"></span>&nbsp;<span
+                          class="material-symbols-outlined" title="Ver">visibility</span></a>
+                      <a data-bs-toggle="modal" data-bs-target="#addModal" href="#" class="btn btn-light btn-sm"><span
+                          class="bi-pencil-fill"></span>&nbsp;<span class="material-symbols-outlined"
+                          title="Editar">edit</span></a>
                       <form action="acoes.php" method="POST" class="d-inline">
-                        <button onclick="return confirm('Tem certeza que deseja excluir?')" type="submit"
-                          name="deleteAgend" value="<?= $agend['ID_AGENDAMENTO'] ?>" class="btn btn-danger btn-sm">
-                          <span class="bi-trash3-fill"></span>&nbsp;<span class="material-symbols-outlined" title="Deletar">delete</span>
-                        </button>
+                        <a data-bs-toggle="modal" data-bs-target="#deleteModal" href="#" class="btn btn-danger btn-sm">
+                          <span class="bi-trash3-fill"></span>&nbsp;<span class="material-symbols-outlined"
+                            title="Deletar">delete</span>
+                        </a>
                       </form>
                     </td>
                   </tr>
@@ -107,7 +112,7 @@ $atual = "Agendamento";
   <?php
   $length = 20;
   foreach ($agendamentos as $table) {
-      include('modalobs.php');
+    include('modal/modalobs.php');
   }
   ?>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
